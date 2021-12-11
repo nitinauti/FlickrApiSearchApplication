@@ -14,14 +14,12 @@ enum Constants {
     static let numberOfColumns: CGFloat = 3
     static let defaultPageNum: Int = 0
     static let defaultTotalCount: Int = 0
-    static let defaultPageSize: Int = 20
+    static let defaultPageSize: Int = 30
     static var FlickrImageCellIdentifire = "FlickrImageCell"
     static var placeholder = "Search here"
     static var FlickrImageCell = "FlickrImageCell"
     static var FlickrSearchViewController = "FlickrSearchViewController"
     static var FlickrSearchViewIdentifire = "FlickrSearchViewController"
-
-
 }
 
 enum NetworkError: Swift.Error, CustomStringConvertible {

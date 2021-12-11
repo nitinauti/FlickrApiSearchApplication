@@ -33,7 +33,7 @@ class FlickrSearchApiManager : FlickrSearchAPIManagerProtocol {
     }
     
     /// download  image form request called from each module
-    func downloadRequest(_ url: URL, size: CGSize, scale: CGFloat, completion: @escaping (Result<UIImage, NetworkError>) -> Void) -> URLSessionDownloadTask {
+    func downloadRequest(_ url: URL, size: CGSize, scale: CGFloat, completion: @escaping (Result<UIImage, NetworkError>) -> Void) {
 
      let Task = URLSession.shared.downloadTask(with: url) { (Url: URL?, response: URLResponse?, error: Error?) in
 
@@ -51,7 +51,6 @@ class FlickrSearchApiManager : FlickrSearchAPIManagerProtocol {
         }
         Task.resume()
         
-        return Task
     }
 
     //MARK: Downsample Image to given Size

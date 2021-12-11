@@ -40,10 +40,9 @@ protocol FlickrSearchInteractorProtocol: class {
 
 protocol FlickrSearchAPIManagerProtocol: class {
 
-    func
-    getFlickrSearch(imageName: String, pageNum: Int, completionHandler: @escaping (Result<FlickrSearchPhoto, NetworkError>) -> ())
+    func getFlickrSearch(imageName: String, pageNum: Int,
+                    completionHandler: @escaping (Result<FlickrSearchPhoto, NetworkError>) -> ())
     
-    func downloadRequest(_ url: URL, size: CGSize, scale: CGFloat, completion: @escaping (Result<UIImage, NetworkError>) -> Void) -> URLSessionDownloadTask
-
-    
+    func downloadRequest(_ url: URL, size: CGSize, scale: CGFloat,
+                   completion: @escaping (Result<UIImage, NetworkError>) -> Void)
 }

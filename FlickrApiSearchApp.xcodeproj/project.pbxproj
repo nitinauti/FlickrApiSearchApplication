@@ -29,6 +29,7 @@
 		0B93BAE42764DF3F00E68738 /* ExtensionView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93BAE32764DF3F00E68738 /* ExtensionView .swift */; };
 		0B93BAEC2764E53300E68738 /* FlickrImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B93BAEB2764E53300E68738 /* FlickrImageCell.xib */; };
 		0B93BAF427650DF700E68738 /* ImageOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93BAF327650DF700E68738 /* ImageOperation.swift */; };
+		0B93BB03276527DC00E68738 /* loadImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B93BB02276527DC00E68738 /* loadImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		0B93BAE32764DF3F00E68738 /* ExtensionView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExtensionView .swift"; sourceTree = "<group>"; };
 		0B93BAEB2764E53300E68738 /* FlickrImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlickrImageCell.xib; sourceTree = "<group>"; };
 		0B93BAF327650DF700E68738 /* ImageOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageOperation.swift; sourceTree = "<group>"; };
+		0B93BB02276527DC00E68738 /* loadImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -245,6 +247,7 @@
 				0B93BACD2764719900E68738 /* APIEndPoint.swift */,
 				0B93BADB2764D85C00E68738 /* ImageDownloader.swift */,
 				0B93BAF327650DF700E68738 /* ImageOperation.swift */,
+				0B93BB02276527DC00E68738 /* loadImageView.swift */,
 			);
 			name = HelperFile;
 			sourceTree = "<group>";
@@ -400,6 +403,7 @@
 				0B6133472763C751007891BF /* NavaigationHelper.swift in Sources */,
 				0B6132ED2763C4DD007891BF /* AppDelegate.swift in Sources */,
 				0B61333E2763C712007891BF /* FlickrSearchInteractor.swift in Sources */,
+				0B93BB03276527DC00E68738 /* loadImageView.swift in Sources */,
 				0B29E7672763E14900A15158 /* Constant.swift in Sources */,
 				0B29E77D2763E41B00A15158 /* FlickrSearchPhoto.swift in Sources */,
 				0B93BACE2764719900E68738 /* APIEndPoint.swift in Sources */,

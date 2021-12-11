@@ -100,10 +100,10 @@ final class ImageOperation: Operation {
     
     private func downloadImage() {
         print("called for get image from image URL")
-        downloadTask = APIManager.downloadRequest(imageURL, size: size, scale: UIScreen.main.scale, completion: { [weak self] (result: Result<UIImage, NetworkError>) in
-            self?.imageDownloadCompletionHandler?(result)
-            self?.finish()
-        })
+//        downloadTask = APIManager.downloadRequest(imageURL, size: size, scale: UIScreen.main.scale, completion: { [weak self] (result: Result<UIImage, NetworkError>) in
+//            self?.imageDownloadCompletionHandler?(result)
+//            self?.finish()
+//        })
     }
 }
 

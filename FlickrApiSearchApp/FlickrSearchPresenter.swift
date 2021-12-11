@@ -18,8 +18,8 @@ class FlickrSearchPresenter: FlickrSearchPresenterProtocol {
     var totalCount = Constants.defaultTotalCount
     var totalPages = Constants.defaultPageNum
     var photoUrlList: [URL] = []
-
-   
+    
+    
     /// append list of url to existing url array
     func addMorePhotoUrls(_ photoUrls: [URL]) {
         self.photoUrlList += photoUrls
@@ -49,7 +49,7 @@ class FlickrSearchPresenter: FlickrSearchPresenterProtocol {
             }
         }
     }
-       
+    
     func crateFlickrPhotoUrlList(from photos: [FlickrPhoto]) -> [URL] {
         let flickrPhotoUrlList = photos.compactMap { (photo) -> URL? in
             let url = "https://farm\(photo.farm).staticflickr.com/\(photo.server)/\(photo.id)_\(photo.secret)_z.jpg"

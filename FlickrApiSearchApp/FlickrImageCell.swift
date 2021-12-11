@@ -16,7 +16,7 @@ class FlickrImageCell: UICollectionViewCell {
         // Initialization code
     }
 
-    func configure(imageURL: URL,size: CGSize) {
+    func configure(imageURL: URL,size: CGSize,indexPath: IndexPath) {
         photoImage.loadImage(with: imageURL, size: size)
       }
     
