@@ -10,7 +10,7 @@ import UIKit
 
 class FlickrSearchWireframe: FlickrSearchWireFrameProtocol {
     
-    static func presentFlickrSearchModule(fromView: AnyObject) {
+    func presentFlickrSearchModule() {
         let view : FlickrSearchViewProtocol = FlickrSearchViewController.instantiate()
         let presenter: FlickrSearchPresenterProtocol  = FlickrSearchPresenter()
         let interactor: FlickrSearchInteractorProtocol = FlickrSearchInteractor()
@@ -25,8 +25,7 @@ class FlickrSearchWireframe: FlickrSearchWireFrameProtocol {
         interactor.APIManager = APIManager
         
         guard let viewController = view as? FlickrSearchViewController else { return }
-        NavaigationHelper.setRootViewController(ViewController:viewController)
-
+        NavigationHelper.setRootViewController(ViewController:viewController)
       }
     
 }

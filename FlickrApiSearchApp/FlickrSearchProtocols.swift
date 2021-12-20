@@ -8,14 +8,22 @@
 import Foundation
 import UIKit
 
+
+protocol ImageDownloaderProtocol {
+    func downloadImage(withURL imageURL: URL, size: CGSize, scale: CGFloat, completion: @escaping ImageDownloadCompletionHander)
+    var APIManager: FlickrSearchAPIManagerProtocol { get }
+}
+
 protocol FlickrSearchViewProtocol: class {
     var presenter: FlickrSearchPresenterProtocol? { get set }
-    func displayFlickrSearchImages(with urlList: [URL])
+    func displayFlickrSearchImages(with viewModel: FlickrSearchModel)
+    func flickrSearchError(_ error: NetworkError)
+    func resetViews()
 
 }
 
 protocol FlickrSearchWireFrameProtocol: class {
-    static func presentFlickrSearchModule(fromView:AnyObject)
+     func presentFlickrSearchModule()
     
 }
 
@@ -27,7 +35,7 @@ protocol FlickrSearchPresenterProtocol: class {
     func getSearchedFlickrPhotos(SearchImageName: String)
     func flickrSearchSuccess(flickrPhotos: FlickrPhotos)
     func flickrSearchError(_ error: NetworkError)
-
+    func clearData()
 }
 
 protocol FlickrSearchInteractorProtocol: class {
@@ -35,7 +43,6 @@ protocol FlickrSearchInteractorProtocol: class {
     var APIManager: FlickrSearchAPIManagerProtocol? { get set }
     
     func loadFlickrPhotos(imageName: String, pageNum: Int)
-    
 }
 
 protocol FlickrSearchAPIManagerProtocol: class {

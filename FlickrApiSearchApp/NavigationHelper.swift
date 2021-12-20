@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public class NavaigationHelper: UINavigationController {
+public class NavigationHelper: UINavigationController {
     
     static var window: UIWindow?
     static var RootViewController = UINavigationController()
@@ -18,10 +18,6 @@ public class NavaigationHelper: UINavigationController {
         window?.rootViewController = UINavigationController(rootViewController: ViewController)
         window?.makeKeyAndVisible()
     }
-    
-    static func PushViewController(ViewController: UIViewController){
-        RootViewController.pushViewController(ViewController, animated: true)
-    }
-    
+
     
 }

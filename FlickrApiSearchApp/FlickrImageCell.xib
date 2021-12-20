@@ -16,7 +16,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="162" height="135"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YY7-zn-Y75" customClass="loadImageView" customModule="FlickrApiSearchApp" customModuleProvider="target">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YY7-zn-Y75">
                         <rect key="frame" x="0.0" y="0.0" width="162" height="135"/>
                     </imageView>
                 </subviews>
@@ -30,7 +30,7 @@
             </constraints>
             <size key="customSize" width="162" height="135"/>
             <connections>
-                <outlet property="photoImage" destination="YY7-zn-Y75" id="EAA-MG-4eA"/>
+                <outlet property="photoImage" destination="YY7-zn-Y75" id="Y1n-xk-g0l"/>
             </connections>
             <point key="canvasLocation" x="-253.62318840579712" y="-0.33482142857142855"/>
         </collectionViewCell>

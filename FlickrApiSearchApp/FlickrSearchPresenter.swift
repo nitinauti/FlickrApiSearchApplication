@@ -13,17 +13,12 @@ class FlickrSearchPresenter: FlickrSearchPresenterProtocol {
     var view: FlickrSearchViewProtocol?
     var interactor: FlickrSearchInteractorProtocol?
     var wireFrame: FlickrSearchWireFrameProtocol?
+    var flickrSearchModel: FlickrSearchModel!
+
     
     var pageNum = Constants.defaultPageNum
     var totalCount = Constants.defaultTotalCount
     var totalPages = Constants.defaultPageNum
-    var photoUrlList: [URL] = []
-    
-    
-    /// append list of url to existing url array
-    func addMorePhotoUrls(_ photoUrls: [URL]) {
-        self.photoUrlList += photoUrls
-    }
     
     func getSearchedFlickrPhotos(SearchImageName: String) {
         pageNum += 1
@@ -36,17 +31,24 @@ class FlickrSearchPresenter: FlickrSearchPresenterProtocol {
             return
         }
         if totalCount == Constants.defaultTotalCount {
-            self.photoUrlList = flickrPhotoUrlList
+            flickrSearchModel = FlickrSearchModel(photoUrlList: flickrPhotoUrlList)
             totalCount = flickrPhotos.photo.count
             totalPages = flickrPhotos.pages
-            DispatchQueue.main.async { [weak self] in
-                self?.view?.displayFlickrSearchImages(with: self?.photoUrlList ?? [])
+            DispatchQueue.main.async { [unowned self] in
+                self.view?.displayFlickrSearchImages(with: self.flickrSearchModel)
             }
         }else {
-            self.addMorePhotoUrls(flickrPhotoUrlList)
-            DispatchQueue.main.async { [weak self] in
-                self?.view?.displayFlickrSearchImages(with: self?.photoUrlList ?? [])
-            }
+            appendMoreFlickrPhotos(flickrPhotoUrlList: flickrPhotoUrlList)
+        }
+    }
+    
+    /// method called after suseesfully load first page .
+    fileprivate func appendMoreFlickrPhotos(flickrPhotoUrlList: [URL]) {
+        totalCount += flickrPhotoUrlList.count
+        flickrSearchModel.addMorePhotoUrls(flickrPhotoUrlList)
+      
+        DispatchQueue.main.async { [unowned self] in
+            self.view?.displayFlickrSearchImages(with: self.flickrSearchModel)
         }
     }
     
@@ -63,8 +65,15 @@ class FlickrSearchPresenter: FlickrSearchPresenterProtocol {
     
     
     func flickrSearchError(_ error: NetworkError) {
-        
+        view?.flickrSearchError(error)
     }
     
+    func clearData() {
+        pageNum = Constants.defaultPageNum
+        totalCount = Constants.defaultTotalCount
+        totalPages = Constants.defaultTotalCount
+        view?.resetViews()
+        flickrSearchModel = nil
+    }
     
 }
